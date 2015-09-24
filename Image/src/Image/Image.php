@@ -41,14 +41,6 @@ use Image\Image\ImageInterface;
 require_once 'Image\src\GD\GD.php';
 require_once 'Image\src\Image\ImageInterface.php';
 
-/**
- * TODO: improve interfaces
- * TODO: LSP
- * TODO: crop
- * TODO: copy
- * TODO: thumbnail
- * TODO: filters
- */
 final class Image implements ImageInterface
 {
     /**
@@ -585,7 +577,7 @@ final class Image implements ImageInterface
         }
 
         if (!in_array($filter, array_keys($this->pngFilterTypes))) {
-            throw new \RuntimeException(sprintf('png_compression_filter should be one or a combination of: '%s'', implode('', '', array_keys($this->pngFilterTypes))));
+            throw new \RuntimeException(sprintf('png_compression_filter should be one or a combination of: "%s"', implode('', '', array_keys($this->pngFilterTypes))));
         }
         $params['filter'] = $this->pngFilterTypes[$filter];
 
