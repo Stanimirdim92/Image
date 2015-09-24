@@ -1,7 +1,8 @@
 <?php
+
 /**
  * MIT License
- * ===========
+ * ===========.
  *
  * Copyright (c) 2015 Stanimir Dimitrov <stanimirdim92@gmail.com>
  *
@@ -27,41 +28,44 @@
  * @author     Stanimir Dimitrov <stanimirdim92@gmail.com>
  * @copyright  2015 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
+ *
  * @version    0.0.3
+ *
  * @link       TBA
  */
 
 namespace Image\Entity;
 
-interface ImageInterface {
+interface ImageInterface
+{
     /**
-     * Get all options set
+     * Get all options set.
      */
     public function getOptions();
 
     /**
-     * Get an individual option
+     * Get an individual option.
      *
      * Keys are normalized to lowercase.
      *
      * Returns null for unfound options
      *
-     * @param  string $option
+     * @param string $option
+     *
      * @return mixed
      */
     public function getOption($option);
 
     /**
-     * The function will return false for invalid images
+     * The function will return false for invalid images.
      */
     public function getImageInfo();
 
     /**
-     * Create the image with the given width and height
+     * Create the image with the given width and height.
      *
      * @param int width
      * @param int height
-     *
      */
     public function resize($width = 1, $height = 1);
 
