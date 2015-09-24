@@ -1,7 +1,8 @@
 <?php
+
 /**
  * MIT License
- * ===========
+ * ===========.
  *
  * Copyright (c) 2015 Stanimir Dimitrov <stanimirdim92@gmail.com>
  *
@@ -27,58 +28,60 @@
  * @author     Stanimir Dimitrov <stanimirdim92@gmail.com>
  * @copyright  2015 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
+ *
  * @version    0.0.3
+ *
  * @link       TBA
  */
 
 namespace Image\Entity;
 
-interface GDInterface {
-
+interface GDInterface
+{
     /**
-     * Check Free Type support
+     * Check Free Type support.
      *
      * @return bool
      */
     public function hasFreeTypeSupport();
 
     /**
-     * Check Free Type Linkage support
+     * Check Free Type Linkage support.
      *
      * @return string|null
      */
     public function getFreeTypeLinkage();
 
     /**
-     * Check T1Lib support
+     * Check T1Lib support.
      *
      * @return bool
      */
     public function hasT1LibSupport();
 
     /**
-     * Check GIF file read support
+     * Check GIF file read support.
      *
      * @return bool
      */
     public function hasGIFReadSupport();
 
     /**
-     * Check GIF file creation support
+     * Check GIF file creation support.
      *
      * @return bool
      */
     public function hasGIFCreateSupport();
 
     /**
-     * Check JPEG|JPG file support
+     * Check JPEG|JPG file support.
      *
      * @return bool
      */
     public function hasJPEGSupport();
 
     /**
-     * Check PNG file support
+     * Check PNG file support.
      *
      * @return bool
      */
