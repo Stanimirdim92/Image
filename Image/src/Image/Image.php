@@ -1,7 +1,6 @@
 <?php
 /**
  * MIT License
- * ===========
  *
  * Copyright (c) 2015 Stanimir Dimitrov <stanimirdim92@gmail.com>
  *
@@ -36,7 +35,6 @@
 namespace Image\Image;
 
 use Image\GD\GD;
-use Image\Image\ImageInterface;
 
 require_once 'Image\src\GD\GD.php';
 require_once 'Image\src\Image\ImageInterface.php';
@@ -44,21 +42,21 @@ require_once 'Image\src\Image\ImageInterface.php';
 final class Image implements ImageInterface
 {
     /**
-     * A valid image path /path/to/image.png
+     * A valid image path /path/to/image.png.
      *
      * @var string
      */
     private $imageFile = null;
 
     /**
-     * Image format, taken from the mime type
+     * Image format, taken from the mime type.
      *
      * @var string
      */
     private $format = null;
 
     /**
-     * The current dimensions of the image
+     * The current dimensions of the image.
      *
      * @var array
      */
@@ -75,7 +73,7 @@ final class Image implements ImageInterface
     private $height = 270;
 
     /**
-     * All config options for different image formats
+     * All config options for different image formats.
      *
      * @var array
      */
@@ -94,7 +92,7 @@ final class Image implements ImageInterface
     ];
 
     /**
-     * All allowed mime types
+     * All allowed mime types.
      *
      * @var array
      */
@@ -108,7 +106,7 @@ final class Image implements ImageInterface
     ];
 
     /**
-     * PNG compression filters
+     * PNG compression filters.
      *
      * @var array
      */
@@ -123,7 +121,7 @@ final class Image implements ImageInterface
     ];
 
     /**
-     * The GD library
+     * The GD library.
      *
      * @var GD
      */
@@ -135,25 +133,25 @@ final class Image implements ImageInterface
     }
 
     /**
-     * Try to open and read image
+     * Try to open and read image.
      *
      * @method open
      *
-     * @param  string $imageFile 
-     * @param  array $options 
+     * @param string $imageFile 
+     * @param array $options 
      *
      * @return ImageInteface
      */
     public function open($imageFile, array $options = [])
     {
-        /**
+        /*
          * See if this really is a file
          */
         if (!is_file($imageFile)) {
             throw new \InvalidArgumentException('Invalid image');
         }
 
-        /**
+        /*
          * Try reading its contents
          */
         $data = file_get_contents($imageFile);
@@ -176,14 +174,14 @@ final class Image implements ImageInterface
 
         $this->imageDimensions = [
             'width'  => imagesx($this->getImageFile()),
-            'height' => imagesy($this->getImageFile())
+            'height' => imagesy($this->getImageFile()),
         ];
 
         return $this;
     }
 
     /**
-     * Free up memory
+     * Free up memory.
      */
     public function __destruct()
     {
@@ -201,7 +199,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * Returns the format
+     * Returns the format.
      *
      * @return string
      */
@@ -211,7 +209,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * The current dimensions of the image
+     * The current dimensions of the image.
      *
      * @return array
      */
@@ -237,7 +235,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * Holds all config data for all methods
+     * Holds all config data for all methods.
      *
      * @param array $options
      * @return ImageInteface
@@ -261,7 +259,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * Get all options set
+     * Get all options set.
      *
      * @return array
      */
@@ -271,13 +269,13 @@ final class Image implements ImageInterface
     }
 
     /**
-     * Get an individual option
+     * Get an individual option.
      *
      * Keys are normalized to lowercase.
      *
-     * Returns null for unfound options
+     * Returns null for unfound options.
      *
-     * @param  string $option
+     * @param string $option
      * @return mixed
      */
     public function getOption($option)
@@ -291,7 +289,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * The function will return false for invalid images
+     * The function will return false for invalid images.
      *
      * @return array|false
      */
@@ -317,7 +315,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * Extract the file format by mime-type
+     * Extract the file format by mime-type.
      *
      * @throws Exception for invalid mime-types
      */
@@ -349,7 +347,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * Try to create a new image from the supplied file
+     * Try to create a new image from the supplied file.
      *
      * @throws Exception on invalid image format
      */
@@ -379,7 +377,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * See if we can create GIF images
+     * See if we can create GIF images.
      *
      * @throws Exception on missing support
      */
@@ -393,7 +391,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * See if we can create JEPG|JPG images
+     * See if we can create JEPG|JPG images.
      *
      * @throws Exception on missing support
      */
@@ -407,7 +405,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * See if we can create PNG images
+     * See if we can create PNG images.
      *
      * @throws Exception on missing support
      */
@@ -421,7 +419,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * See if we can create WEBP images
+     * See if we can create WEBP images.
      *
      * @throws Exception on missing support
      */
@@ -437,7 +435,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * Generates a GD image
+     * Generates a GD image.
      *
      * @return resource
      */
@@ -472,10 +470,11 @@ final class Image implements ImageInterface
     }
 
     /**
-     * Create the image with the given width and height
+     * Create the image with the given width and height.
      *
      * @param int width
      * @param int height
+     * 
      * @throws RuntimeException on invalid operation
      *
      * @return ImageInteface
@@ -506,6 +505,7 @@ final class Image implements ImageInterface
     /**
      * @param string $path
      * @param string $fileName
+     * 
      * @throws RuntimeException
      */
     public function save($path, $fileName)
@@ -525,7 +525,7 @@ final class Image implements ImageInterface
         $format = strtolower($this->getFormat());
         $imageSaveMethod = 'image'.$format;
         $options = [$this->getImageFile(), $path.DIRECTORY_SEPARATOR.$fileName];
-        
+
         $opt = $this->checkFormatOptions();
         foreach ($opt as $key => $option) {
             $options[] = $option;
@@ -573,7 +573,7 @@ final class Image implements ImageInterface
         }
 
         if (!is_string($filter)) {
-            throw new \RuntimeException('png_compression_filter must be a string '. gettype($filter).' given');
+            throw new \RuntimeException('png_compression_filter must be a string '.gettype($filter).' given');
         }
 
         if (!in_array($filter, array_keys($this->pngFilterTypes))) {

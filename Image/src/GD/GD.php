@@ -1,7 +1,6 @@
 <?php
 /**
  * MIT License
- * ===========
  *
  * Copyright (c) 2015 Stanimir Dimitrov <stanimirdim92@gmail.com>
  *
@@ -27,9 +26,9 @@
  * @author     Stanimir Dimitrov <stanimirdim92@gmail.com>
  * @copyright  2015 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
- * 
+ *
  * @version    0.0.4
- * 
+ *
  * @link       TBA
  */
 
@@ -39,10 +38,11 @@ use Image\GD\GDInterface;
 
 require_once 'Image\src\GD\GDInterface.php';
 
-final class GD implements GDInterface {
+final class GD implements GDInterface
+{
 
     /**
-     * The GD library
+     * The GD library.
      *
      * @var GD
      */
@@ -51,7 +51,7 @@ final class GD implements GDInterface {
     /**
      * @method __construct
      *
-     * @param  string $version minimum GD version
+     * @param string $version minimum GD version
      */
     public function __construct($version = '2.0.1')
     {
@@ -60,7 +60,7 @@ final class GD implements GDInterface {
     }
 
     /**
-     * Load GD library
+     * Load GD library.
      *
      * @throws RuntimeException if gd_info doesn't exists
      */
@@ -74,7 +74,7 @@ final class GD implements GDInterface {
     }
 
     /**
-     * Check minimum needed GD version
+     * Check minimum needed GD version.
      *
      * @param string $version
      * @throws RuntimeException on invalid version
@@ -87,7 +87,7 @@ final class GD implements GDInterface {
     }
 
     /**
-     * Check Free Type support
+     * Check Free Type support.
      *
      * @return bool
      */
@@ -97,7 +97,7 @@ final class GD implements GDInterface {
     }
 
     /**
-     * Check Free Type Linkage support
+     * Check Free Type Linkage support.
      *
      * @return string|null
      */
@@ -110,7 +110,7 @@ final class GD implements GDInterface {
     }
 
     /**
-     * Check T1Lib support
+     * Check T1Lib support.
      *
      * @return bool
      */
@@ -120,7 +120,7 @@ final class GD implements GDInterface {
     }
 
     /**
-     * Check GIF file read support
+     * Check GIF file read support.
      *
      * @return bool
      */
@@ -130,7 +130,7 @@ final class GD implements GDInterface {
     }
 
     /**
-     * Check GIF file creation support
+     * Check GIF file creation support.
      *
      * @return bool
      */
@@ -140,7 +140,7 @@ final class GD implements GDInterface {
     }
 
     /**
-     * Check JPEG|JPG file support
+     * Check JPEG|JPG file support.
      *
      * @return bool
      */
@@ -150,7 +150,7 @@ final class GD implements GDInterface {
     }
 
     /**
-     * Check PNG file support
+     * Check PNG file support.
      *
      * @return bool
      */
