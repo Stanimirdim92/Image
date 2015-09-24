@@ -105,6 +105,7 @@ final class GD implements GDInterface
         if ($this->hasFreeTypeSupport()) {
             return $this->gd['FreeType Linkage'];
         }
+
         return;
     }
 

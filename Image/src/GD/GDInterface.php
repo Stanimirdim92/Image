@@ -37,7 +37,6 @@ namespace Image\GD;
 
 interface GDInterface
 {
-
     /**
      * Check Free Type support.
      *
