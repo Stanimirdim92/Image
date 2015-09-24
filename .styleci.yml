@@ -1,0 +1,36 @@
+preset: recommended
+
+linting: true
+
+enabled:
+  - long_array_syntax
+  - strict
+  - unalign_double_arrow
+  - encoding
+  - indentation
+  - linefeed
+  - trailing_spaces
+  - short_tag
+  - visibility
+  - php_closing_tag
+  - braces
+  - phpdoc_align
+  - function_declaration
+  - elseif
+  - eof_ending
+  - unused_use
+  - phpdoc_indent
+  - multiline_array_trailing_comma
+  - method_argument_space
+  - short_array_syntax
+  - single_blank_line_before_namespace
+  - phpdoc_scalar
+
+disabled:
+  - align_double_arrow
+
+finder:
+  name:
+    - "*.php"
+  path:
+    - "Image"
