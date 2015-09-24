@@ -1,6 +1,6 @@
 <?php
 /**
- * MIT License
+ * MIT License.
  *
  * Copyright (c) 2015 Stanimir Dimitrov <stanimirdim92@gmail.com>
  *
@@ -34,13 +34,10 @@
 
 namespace Image\GD;
 
-use Image\GD\GDInterface;
-
 require_once 'Image\src\GD\GDInterface.php';
 
 final class GD implements GDInterface
 {
-
     /**
      * The GD library.
      *
@@ -77,6 +74,7 @@ final class GD implements GDInterface
      * Check minimum needed GD version.
      *
      * @param string $version
+     *
      * @throws RuntimeException on invalid version
      */
     private function checkGDVersion($version = '2.0.1')
@@ -106,7 +104,7 @@ final class GD implements GDInterface
         if ($this->hasFreeTypeSupport()) {
             return $this->gd['FreeType Linkage'];
         }
-        return null;
+        return;
     }
 
     /**

@@ -1,7 +1,6 @@
 <?php
 /**
- * MIT License
- * ===========
+ * MIT License.
  *
  * Copyright (c) 2015 Stanimir Dimitrov <stanimirdim92@gmail.com>
  *
@@ -27,15 +26,15 @@
  * @author     Stanimir Dimitrov <stanimirdim92@gmail.com>
  * @copyright  2015 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
- * 
+ *
  * @version    0.0.4
- * 
+ *
  * @link       TBA
  */
 
 namespace Image\GD;
 
-interface GDInterface 
+interface GDInterface
 {
 
     /**

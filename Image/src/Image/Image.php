@@ -1,6 +1,6 @@
 <?php
 /**
- * MIT License
+ * MIT License.
  *
  * Copyright (c) 2015 Stanimir Dimitrov <stanimirdim92@gmail.com>
  *
@@ -26,9 +26,9 @@
  * @author     Stanimir Dimitrov <stanimirdim92@gmail.com>
  * @copyright  2015 (c) Stanimir Dimitrov.
  * @license    http://www.opensource.org/licenses/mit-license.php  MIT License
- * 
+ *
  * @version    0.0.4
- * 
+ *
  * @link       TBA
  */
 
@@ -137,8 +137,8 @@ final class Image implements ImageInterface
      *
      * @method open
      *
-     * @param string $imageFile 
-     * @param array $options 
+     * @param string $imageFile
+     * @param array  $options
      *
      * @return ImageInteface
      */
@@ -159,7 +159,7 @@ final class Image implements ImageInterface
             throw new \RuntimeException('Cannot open file');
         }
 
-        /**
+        /*
          * Try creating image from the read file
          */
         $resource = imagecreatefromstring($data);
@@ -238,6 +238,7 @@ final class Image implements ImageInterface
      * Holds all config data for all methods.
      *
      * @param array $options
+     *
      * @return ImageInteface
      */
     private function setOptions(array $options = [])
@@ -276,6 +277,7 @@ final class Image implements ImageInterface
      * Returns null for unfound options.
      *
      * @param string $option
+     *
      * @return mixed
      */
     public function getOption($option)
@@ -299,7 +301,7 @@ final class Image implements ImageInterface
     }
 
     /**
-     * Prepare new image size
+     * Prepare new image size.
      *
      * @param int $width
      * @param int $height
@@ -310,7 +312,7 @@ final class Image implements ImageInterface
             throw new \InvalidArgumentException('Image height and width must be at least 1 pixel');
         }
 
-        $this->width  = (int) $width;
+        $this->width = (int) $width;
         $this->height = (int) $height;
     }
 
@@ -327,12 +329,12 @@ final class Image implements ImageInterface
             throw new \RuntimeException('Unsupported image format');
         }
 
-        /**
+        /*
          * strip out image/ from string and make the rest upper cases
          */
         $format = strtoupper(substr($format['mime'], 6));
 
-        /**
+        /*
          * Normalize formats
          */
         if ($format === 'JPG' || $format === 'PJPEG') {
@@ -474,7 +476,7 @@ final class Image implements ImageInterface
      *
      * @param int width
      * @param int height
-     * 
+     *
      * @throws RuntimeException on invalid operation
      *
      * @return ImageInteface
@@ -505,7 +507,7 @@ final class Image implements ImageInterface
     /**
      * @param string $path
      * @param string $fileName
-     * 
+     *
      * @throws RuntimeException
      */
     public function save($path, $fileName)
