@@ -1,6 +1,7 @@
 # Image - Image manipulation library
 
-<p align="center">
+<p align="left">
+    [![SensioLabsInsight](https://insight.sensiolabs.com/projects/c3d586f9-1941-40a5-96d7-4189ce47fe24/mini.png)](https://insight.sensiolabs.com/projects/c3d586f9-1941-40a5-96d7-4189ce47fe24)
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="Software License"></img></a>
     <a href="https://github.com/Stanimirdim92/Image"><img src="https://img.shields.io/badge/release-0.0.4-blue.svg" alt="Latest Version"></img></a>
 </p>
