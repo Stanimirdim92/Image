@@ -12,7 +12,6 @@
 namespace Image\Image;
 
 use Image\GD\GD;
-use Image\Image\ImageInterface;
 
 final class Image implements ImageInterface
 {
