@@ -1,0 +1,29 @@
+{
+    "name": "stanimirdim92/image",
+    "description": "New type of image manipulation.",
+    "license": "MIT",
+    "type": "library",
+    "keywords": ["image", "gd"],
+    "homepage": "https://github.com/Stanimirdim92/Image/",
+    "authors": [
+        {
+            "name": "Stanimir Dimitrov",
+            "email": "stanimirdim92@gmail.com",
+            "homepage": "https://github.com/Stanimirdim92",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+    },
+    "autoload": {
+        "psr-4": {
+          "Application\\": "Application.php",
+          "Image\\": "Image/src/Image/",
+          "GD\\": "Image/src/GD/"
+        }
+    },
+    "config": {
+        "process-timeout": 10000
+    }
+}
