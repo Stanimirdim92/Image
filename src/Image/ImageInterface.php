@@ -47,11 +47,4 @@ interface ImageInterface
      * @param string $fileName
      */
     public function save($path, $fileName);
-
-    /**
-     * Opens an existing image from $path.
-     *
-     * @param string $path
-     */
-    public function open($path);
 }

@@ -11,8 +11,7 @@
 
 namespace Image\GD;
 
-use Image\src\GD\GDInterface;
-// require_once 'Image\src\GD\GDInterface.php';
+use Image\GD\GDInterface;
 
 final class GD implements GDInterface
 {

@@ -18,9 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-          "Application\\": "Application.php",
-          "Image\\": "Image/src/Image/",
-          "GD\\": "Image/src/GD/"
+          "Image\\": "src/"
         }
     },
     "config": {

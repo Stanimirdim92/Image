@@ -9,7 +9,7 @@
  * @link       TBA
  */
 
-namespace Application;
+namespace Image;
 
 use Image\Image\Image;
 
@@ -20,9 +20,9 @@ class Application
      */
     private $image;
 
-    public function __construct()
+    public function __construct($imageFile, array $options = [])
     {
-        $this->image = new Image();
+        $this->image = new Image($imageFile, $options);
     }
 
     /**

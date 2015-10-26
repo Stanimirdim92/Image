@@ -14,9 +14,6 @@ namespace Image\Image;
 use Image\GD\GD;
 use Image\Image\ImageInterface;
 
-// require_once 'Image\src\GD\GD.php';
-// require_once 'Image\src\Image\ImageInterface.php';
-
 final class Image implements ImageInterface
 {
     /**
@@ -105,9 +102,11 @@ final class Image implements ImageInterface
      */
     private $gd = null;
 
-    public function __construct()
+    public function __construct($imageFile, array $options = [])
     {
         $this->gd = new GD('2.0.1');
+
+        $this->prepareImage($imageFile, $options);
     }
 
     /**
@@ -120,7 +119,7 @@ final class Image implements ImageInterface
      *
      * @return ImageInteface
      */
-    public function open($imageFile, array $options = [])
+    private function prepareImage($imageFile, array $options = [])
     {
         /*
          * See if this really is a file
@@ -132,8 +131,7 @@ final class Image implements ImageInterface
         /*
          * Try reading its contents
          */
-        $data = file_get_contents($imageFile);
-        if (!$data) {
+        if (!$data = file_get_contents($imageFile)) {
             throw new \RuntimeException('Cannot open file');
         }
 
@@ -146,7 +144,13 @@ final class Image implements ImageInterface
         }
 
         $this->imageFile = $imageFile;
-        $this->setOptions($options);
+
+        if (!empty($options)) {
+            foreach ($options as $key => $value) {
+                $this->options[$key] = $value;
+            }
+        }
+
         $this->extractImageFormat();
         $this->createImageFromFormat();
 
@@ -210,31 +214,6 @@ final class Image implements ImageInterface
     public function getWidth()
     {
         return $this->width;
-    }
-
-    /**
-     * Holds all config data for all methods.
-     *
-     * @param array $options
-     *
-     * @return ImageInteface
-     */
-    private function setOptions(array $options = [])
-    {
-        if (!is_array($options) && !$options instanceof Traversable) {
-            throw new Exception\InvalidArgumentException(sprintf(
-                'Parameter provided to %s must be an array or Traversable',
-                __METHOD__
-            ));
-        }
-
-        if (!empty($options)) {
-            foreach ($options as $key => $value) {
-                $this->options[$key] = $value;
-            }
-        }
-
-        return $this;
     }
 
     /**
